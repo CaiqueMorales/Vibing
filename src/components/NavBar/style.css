@@ -1,0 +1,101 @@
+/* ==================== Header ==================== */
+
+.nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2em;
+}
+
+.nav-logo{
+    color: #FFFFFF;
+}
+
+.nav-menu{
+    display: flex;
+}
+
+.nav-link{
+    color: #FFFFFF;
+}
+
+.hamburger{ 
+    width: 25px;
+    cursor: pointer;
+}
+
+.hamburger > .linha{
+    background-color: #FFFFFF;
+    margin: 5px;
+    height: 2px;
+}
+
+.hamburger > .linha:nth-of-type(1){
+    width: 80%;
+}
+
+.hamburger > .linha:nth-of-type(2){
+    width: 100%;
+}
+
+.hamburger > .linha:nth-of-type(3){
+    width: 75%;
+}
+
+@media screen and (max-width: 768px){
+
+    .nav{
+        flex-direction: row-reverse;
+    }
+
+    .nav-menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        background-color: darkblue;
+        transform: translateX(-100%);
+        transition: .3s;
+    }
+
+    .nav-menu.active{
+        transform: translateX(0%);
+    }
+
+    .nav-item:not(:first-of-type){
+        margin-top: 1em;
+    }
+
+    .nav-menu > .hamburger-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 2em;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+
+    .nav-item:not(:first-of-type){
+        margin-top: 0;
+        margin-left: 1em;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+}
