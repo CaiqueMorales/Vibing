@@ -1,5 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+  } from "react-router-dom"
 import Home from './components/pages/Home/';
 import Animes from './components/pages/Animes';
 import Mangas from './components/pages/Mangas';
@@ -18,25 +22,21 @@ function App (){
             <Router>
                 
                 <NavBar />
-                <Switch>
+                <Routes>
 
-                    <Route exact path="/">
-                        <Home />
+                    <Route exact path="/" element={<Home />}>
                     </Route>
 
-                    <Route path="/Animes">
-                        <Animes />
+                    <Route path="/Animes" element={<Animes />}>
                     </Route>
 
-                    <Route path="/Mangas">
-                        <Mangas />
+                    <Route path="/Mangas" element={<Mangas />}>
                     </Route>
 
-                    <Route path="/Jogos">
-                        <Jogos />
+                    <Route path="/Jogos" element={<Jogos />}>
                     </Route>
 
-                </Switch>    
+                </Routes>    
                 
             </Router>            
 
